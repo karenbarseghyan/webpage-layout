@@ -3,10 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {Home, Repositories, Users} from './components/views'
+import {Header} from "./components/common/index";
 
 ReactDOM.render(
   <>
-    <App />
+  
+    <Router>
+      <Header />
+      <Switch>
+        <Route exact path = "/" component = {Home} />
+        <Route 
+          path = "/home"
+          component = {Repositories}
+        />
+        <Route 
+          path = "/users"
+          component = {Users}
+        />
+        <Route 
+          path = "/repositories"
+          component = {Repositories}
+ />
+      </Switch>
+    </Router>
   </>,
   document.getElementById('root')
 );
