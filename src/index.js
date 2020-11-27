@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {Home, Repositories, Users, About, Contact} from './components/views'
-import {Header, Footer} from "./components/common/index";
-
+import {Home, Repositories, Users} from './components/views'
+import {Header} from "./components/common/index";
 
 ReactDOM.render(
   <>
@@ -17,7 +16,7 @@ ReactDOM.render(
         <Route exact path = "/" component = {Home} />
         <Route 
           path = "/home"
-          component = {Home}
+          component = {Repositories}
         />
         <Route 
           path = "/users"
@@ -26,17 +25,8 @@ ReactDOM.render(
         <Route 
           path = "/repositories"
           component = {Repositories}
-        />
-        <Route
-          path = "/about"
-          component = {About}
-        />
-        <Route
-          path = "/contact"
-          component = {Contact}
-        />
+ />
       </Switch>
-      <Footer />
     </Router>
   </>,
   document.getElementById('root')
