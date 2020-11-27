@@ -1,28 +1,26 @@
+import { AppBar, Button, Toolbar } from '@material-ui/core';
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink as RouterNavLink} from 'react-router-dom';
+// import {CourseButton} from '../../button'
+import './Header.css'
 
 const Header = () => {
 
   return(
-    <nav>
-      <ul>
-        <li>
-          <Link to="/home">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/users">
-            Users
-          </Link>
-        </li>
-        <li>
-          <Link to="/repositories">
-            Repositories
-          </Link>
-        </li>
-      </ul>
-    </nav>
+    <AppBar position="static">
+      <Toolbar >   
+        {/* <CourseButton /> */}
+         <Button color = "inherit" component = {RouterNavLink} to="/home" activeClassName = "AppBar__Button--active">
+          Home 
+        </Button>
+        <Button color = "inherit" component = {RouterNavLink} to="/users" activeClassName = "AppBar__Button--active">
+          Users 
+        </Button>
+        <Button color = "inherit" component = {RouterNavLink} to="/repositories" activeClassName = "AppBar__Button--active">
+          Repositories
+        </Button>
+      </Toolbar>
+    </AppBar>
   )
 }
 

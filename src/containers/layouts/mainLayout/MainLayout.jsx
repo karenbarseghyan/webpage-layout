@@ -1,10 +1,18 @@
+import { Container, Paper } from '@material-ui/core'
 import React from 'react'
+import { Header } from '../../../components/common'
+import './MainLayout.css'
 
-const MainLayout = () => {
+const MainLayout = props => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Header />
+            <Container className = "MainLayout__Container" maxWidth="lg">
+                <Paper className = "MainLayout__Paper" elevation ={3}>
+                    {props.children}
+                </Paper>
+            </Container>
+        </>
     )
 };
 

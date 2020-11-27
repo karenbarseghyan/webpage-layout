@@ -7,27 +7,44 @@ import {Home, Repositories, Users} from './containers/views'
 import {MainLayout} from './containers/layouts'
 import {Header} from "./components/common/index";
 
+
 ReactDOM.render(
   <>
   
     <Router>
-      <MainLayout />
-      <Header />
-      <Switch>
-        <Route exact path = "/" component = {Home} />
-        <Route 
-          path = "/home"
-          component = {Home}
-        />
-        <Route 
-          path = "/users"
-          component = {Users}
-        />
-        <Route 
-          path = "/repositories"
-          component = {Repositories}
-        />
-      </Switch>
+      <MainLayout>
+        <Switch>
+          <Route exact path = "/" component = {Home} />
+          <Route 
+           path = "/home"
+           component = {Home}
+           />
+          <Route 
+            path = "/users"
+            component = {Users}
+          />
+          <Route 
+            path = "/repositories"
+            component = {Repositories}
+          />
+        </Switch>
+      </MainLayout>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     </Router>
   </>,
   document.getElementById('root')
