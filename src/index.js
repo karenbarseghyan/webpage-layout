@@ -3,19 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {Home, Repositories, Users} from './components/views'
+import {Home, Repositories, Users} from './containers/views'
+import {MainLayout} from './containers/layouts'
 import {Header} from "./components/common/index";
 
 ReactDOM.render(
   <>
   
     <Router>
+      <MainLayout />
       <Header />
       <Switch>
         <Route exact path = "/" component = {Home} />
         <Route 
           path = "/home"
-          component = {Repositories}
+          component = {Home}
         />
         <Route 
           path = "/users"
@@ -24,7 +26,7 @@ ReactDOM.render(
         <Route 
           path = "/repositories"
           component = {Repositories}
- />
+        />
       </Switch>
     </Router>
   </>,
