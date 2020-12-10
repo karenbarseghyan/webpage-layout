@@ -1,52 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import './index.css';
+import store from './redux/store';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {Home, Repositories, Users} from './containers/views'
-import {MainLayout} from './containers/layouts'
-import {Header} from "./components/common/index";
+import MainRouter from './router';
 
 
 ReactDOM.render(
-  <>
-  
-    <Router>
-      <MainLayout>
-        <Switch>
-          <Route exact path = "/" component = {Home} />
-          <Route 
-           path = "/home"
-           component = {Home}
-           />
-          <Route 
-            path = "/users"
-            component = {Users}
-          />
-          <Route 
-            path = "/repositories"
-            component = {Repositories}
-          />
-        </Switch>
-      </MainLayout>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </Router>
-  </>,
+  <Provider store = {store}>
+    <MainRouter />
+  </Provider>,
   document.getElementById('root')
 );
 
