@@ -1,4 +1,3 @@
-const { RootRef } = require("@material-ui/core");
 import { createStore } from 'redux';
 import rootReducer from '../reducers';
 

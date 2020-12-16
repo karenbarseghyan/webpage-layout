@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import './index.css';
-import store from './redux/store';
-import reportWebVitals from './reportWebVitals';
 import MainRouter from './router';
 
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+
+console.log(store.getState());
 
 ReactDOM.render(
   <Provider store = {store}>
